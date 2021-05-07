@@ -1,6 +1,6 @@
-package com.github.steewsc.mvisetup.services
+package eu.balzo.foryouandme.services
 
-import com.github.steewsc.mvisetup.MyBundle
+import eu.balzo.foryouandme.MyBundle
 
 class MyApplicationService {
 

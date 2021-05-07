@@ -1,4 +1,4 @@
-package com.github.steewsc.mvisetup
+package eu.balzo.foryouandme
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls

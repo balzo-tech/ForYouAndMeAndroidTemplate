@@ -1,4 +1,4 @@
-package other.mviSetup.src.app_package
+package eu.balzo.foryouandme.src.app_package
 
 import com.android.tools.idea.wizard.template.ProjectTemplateData
 

@@ -1,17 +1,17 @@
-package other.mviSetup
+package eu.balzo.foryouandme
 
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
 import com.android.tools.idea.wizard.template.impl.activities.common.addAllKotlinDependencies
 import com.android.tools.idea.wizard.template.impl.activities.common.generateManifest
-import com.github.steewsc.mvisetup.listeners.MyProjectManagerListener.Companion.projectInstance
+import eu.balzo.foryouandme.listeners.MyProjectManagerListener.Companion.projectInstance
 import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFileFactory
 import com.intellij.psi.PsiManager
 import org.jetbrains.kotlin.idea.KotlinLanguage
-import other.mviSetup.src.app_package.someActivity
-import other.mviSetup.src.app_package.someActivityLayout
+import eu.balzo.foryouandme.src.app_package.someActivity
+import eu.balzo.foryouandme.src.app_package.someActivityLayout
 
 fun RecipeExecutor.mviSetup(
         moduleData: ModuleTemplateData,

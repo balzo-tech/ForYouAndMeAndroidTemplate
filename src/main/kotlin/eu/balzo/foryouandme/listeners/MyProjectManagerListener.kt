@@ -1,8 +1,8 @@
-package com.github.steewsc.mvisetup.listeners
+package eu.balzo.foryouandme.listeners
 
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.ProjectManagerListener
-import com.github.steewsc.mvisetup.services.MyProjectService
+import eu.balzo.foryouandme.services.MyProjectService
 
 class MyProjectManagerListener : ProjectManagerListener {
 
