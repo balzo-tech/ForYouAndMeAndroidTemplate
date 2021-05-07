@@ -1,1 +1,1 @@
-rootProject.name = "mvi-setup"
+rootProject.name = "ForYouAndMeAndroidTemplate"
