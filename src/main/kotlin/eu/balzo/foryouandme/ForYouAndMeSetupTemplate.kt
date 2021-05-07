@@ -3,8 +3,11 @@ package eu.balzo.foryouandme
 import com.android.tools.idea.wizard.template.*
 import java.io.File
 
+
 val ForYouAndMeSetupTemplate
     get() = template {
+
+        val template = Template.NoActivity
 
         name = "ForYouAndMe Template"
         description = "Setup project for ForYouAndMe StudyApp"
@@ -20,35 +23,13 @@ val ForYouAndMeSetupTemplate
             )
 
         val packageNameParam = defaultPackageNameParameter
-        val entityName = stringParameter {
-            name = "Entity Name"
-            default = "Wurst"
-            help = "The name of the entity class to create and use in Activity"
-            constraints = listOf(Constraint.NONEMPTY)
-        }
 
-        val layoutName = stringParameter {
-            name = "Layout Name"
-            default = "my_act"
-            help = "The name of the layout to create for the activity"
-            constraints = listOf(Constraint.LAYOUT, Constraint.UNIQUE, Constraint.NONEMPTY)
-            suggest = { "${activityToLayout(entityName.value.toLowerCase())}s" }
-        }
-
-        widgets(
-            TextFieldWidget(entityName),
-            TextFieldWidget(layoutName),
-            PackageNameWidget(packageNameParam)
-        )
-
-       thumb { File("src/main/resources/foryouandme.png") }
+        thumb { File("preview_analog.png") }
 
         recipe = { data: TemplateData ->
-            mviSetup(
+            forYouAndMeSetup(
                 data as ModuleTemplateData,
-                packageNameParam.value,
-                entityName.value,
-                layoutName.value
+                packageNameParam.value
             )
         }
     }
