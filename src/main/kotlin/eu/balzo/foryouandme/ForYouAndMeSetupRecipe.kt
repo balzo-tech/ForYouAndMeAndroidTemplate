@@ -15,47 +15,48 @@ fun RecipeExecutor.forYouAndMeSetup(
     addAllKotlinDependencies(moduleData)
 
     // project build.gradle
-    moduleData.rootDir.resolve("build.gradle.kts").delete()
+    projectData.rootDir.resolve("build.gradle.kts").delete()
     save(projectBuildGradle(), projectData.rootDir.resolve("build.gradle.kts"))
 
     // app build.gradle
     moduleData.rootDir.resolve("build.gradle.kts").delete()
-    save(appBuildGradle(), moduleData.rootDir.resolve("build.gradle.kts"))
+    save(appBuildGradle(moduleData.packageName), moduleData.rootDir.resolve("build.gradle.kts"))
 
     // secrets file
     save(secrets(), moduleData.resDir.resolve("values/secrets.xml"))
 
     // environment
-    save(environment(projectData), moduleData.srcDir.resolve("StudyEnvironment.kt"))
+    save(environment(moduleData.packageName), moduleData.srcDir.resolve("StudyEnvironment.kt"))
 
     // image configuration
     save(
-        imageConfiguration(projectData),
+        imageConfiguration(moduleData.packageName),
         moduleData.srcDir.resolve("StudyImageConfiguration.kt")
     )
 
     // video configuration
     save(
-        videoConfiguration(projectData),
+        videoConfiguration(moduleData.packageName),
         moduleData.srcDir.resolve("StudyVideoConfiguration.kt")
     )
 
     // module
     save(
-        module(projectData),
+        module(moduleData.packageName),
         moduleData.srcDir.resolve("StudyModule.kt")
     )
 
     // app
     save(
-        app(projectData),
+        app(moduleData.packageName),
         moduleData.srcDir.resolve("StudyApp.kt")
     )
 
     // manifest
+    moduleData.manifestDir.resolve("AndroidManifest.xml").delete()
     save(
-        manifest(projectData),
-        moduleData.srcDir.resolve("AndroidManifest.xml")
+        manifest(moduleData.packageName),
+        moduleData.manifestDir.resolve("AndroidManifest.xml")
     )
 
 }

@@ -1,6 +1,6 @@
 package eu.balzo.foryouandme.src.app_package
 
-fun appBuildGradle() =
+fun appBuildGradle(packageName: String) =
     """
 import java.io.FileInputStream
 import java.util.*
@@ -19,7 +19,7 @@ android {
     compileSdk = 30
     buildToolsVersion = "30.0.3"
     defaultConfig {
-        applicationId = "com.foryouandme.foryouandmedemo"
+        applicationId = "$packageName"
         minSdk = 21
         targetSdk = 30
         versionCode = 1

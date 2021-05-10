@@ -1,10 +1,8 @@
 package eu.balzo.foryouandme.src.app_package
 
-import com.android.tools.idea.wizard.template.ProjectTemplateData
-
-fun app(project: ProjectTemplateData) =
+fun app(packageName: String) =
     """
-package ${project.applicationPackage}
+package $packageName
 
 import com.foryouandme.core.arch.app.ForYouAndMeApp
 import com.foryouandme.data.datasource.Environment
