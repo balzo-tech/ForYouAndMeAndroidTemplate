@@ -8,10 +8,7 @@ import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFileFactory
 import com.intellij.psi.PsiManager
 import eu.balzo.foryouandme.listeners.MyProjectManagerListener.Companion.projectInstance
-import eu.balzo.foryouandme.src.app_package.appBuildGradle
-import eu.balzo.foryouandme.src.app_package.environment
-import eu.balzo.foryouandme.src.app_package.projectBuildGradle
-import eu.balzo.foryouandme.src.app_package.secrets
+import eu.balzo.foryouandme.src.app_package.*
 import org.jetbrains.kotlin.idea.KotlinLanguage
 
 fun RecipeExecutor.forYouAndMeSetup(
@@ -42,6 +39,9 @@ fun RecipeExecutor.forYouAndMeSetup(
 
     // environment
     save(environment(projectData), moduleData.srcDir.resolve("StudyEnvironment.kt"))
+
+    // image configuration
+    save(imageConfiguration(projectData), moduleData.srcDir.resolve("StudyImageConfiguration.kt"))
 
 }
 
