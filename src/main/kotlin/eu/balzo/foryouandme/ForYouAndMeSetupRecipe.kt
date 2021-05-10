@@ -3,13 +3,13 @@ package eu.balzo.foryouandme
 import com.android.tools.idea.wizard.template.ModuleTemplateData
 import com.android.tools.idea.wizard.template.RecipeExecutor
 import com.android.tools.idea.wizard.template.impl.activities.common.addAllKotlinDependencies
-import com.android.tools.idea.wizard.template.impl.activities.common.generateManifest
 import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.psi.PsiDirectory
 import com.intellij.psi.PsiFileFactory
 import com.intellij.psi.PsiManager
 import eu.balzo.foryouandme.listeners.MyProjectManagerListener.Companion.projectInstance
-import eu.balzo.foryouandme.src.app_package.buildGradle
+import eu.balzo.foryouandme.src.app_package.appBuildGradle
+import eu.balzo.foryouandme.src.app_package.projectBuildGradle
 import org.jetbrains.kotlin.idea.KotlinLanguage
 
 fun RecipeExecutor.forYouAndMeSetup(
@@ -27,9 +27,16 @@ fun RecipeExecutor.forYouAndMeSetup(
     val directorySrc = PsiManager.getInstance(project).findDirectory(virtSrc)!!
     val directoryRes = PsiManager.getInstance(project).findDirectory(virtRes)!!
 
-
+    // project build.gradle
     moduleData.rootDir.resolve("build.gradle.kts").delete()
-    save(buildGradle(), moduleData.rootDir.resolve("build.gradle.kts"))
+    save(projectBuildGradle(), projectData.rootDir.resolve("build.gradle.kts"))
+
+    // app build.gradle
+    moduleData.rootDir.resolve("build.gradle.kts").delete()
+    save(appBuildGradle(), moduleData.rootDir.resolve("build.gradle.kts"))
+
+    // secrets file
+
 
 }
 

@@ -1,6 +1,6 @@
 package eu.balzo.foryouandme.src.app_package
 
-fun buildGradle() =
+fun appBuildGradle() =
     """
 import java.io.FileInputStream
 import java.util.*
