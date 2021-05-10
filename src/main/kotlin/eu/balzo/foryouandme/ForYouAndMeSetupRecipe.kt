@@ -10,6 +10,7 @@ import com.intellij.psi.PsiManager
 import eu.balzo.foryouandme.listeners.MyProjectManagerListener.Companion.projectInstance
 import eu.balzo.foryouandme.src.app_package.appBuildGradle
 import eu.balzo.foryouandme.src.app_package.projectBuildGradle
+import eu.balzo.foryouandme.src.app_package.secrets
 import org.jetbrains.kotlin.idea.KotlinLanguage
 
 fun RecipeExecutor.forYouAndMeSetup(
@@ -36,7 +37,7 @@ fun RecipeExecutor.forYouAndMeSetup(
     save(appBuildGradle(), moduleData.rootDir.resolve("build.gradle.kts"))
 
     // secrets file
-
+    save(secrets(), moduleData.srcDir.resolve("values/secrets.xml"))
 
 }
 
