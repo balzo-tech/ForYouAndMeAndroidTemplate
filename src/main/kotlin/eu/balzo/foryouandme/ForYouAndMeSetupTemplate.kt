@@ -27,10 +27,7 @@ val ForYouAndMeSetupTemplate
         thumb { File("preview_analog.png") }
 
         recipe = { data: TemplateData ->
-            forYouAndMeSetup(
-                data as ModuleTemplateData,
-                packageNameParam.value
-            )
+            forYouAndMeSetup(data as ModuleTemplateData)
         }
     }
 
