@@ -52,6 +52,12 @@ fun RecipeExecutor.forYouAndMeSetup(
         moduleData.srcDir.resolve("StudyVideoConfiguration.kt")
     )
 
+    // module
+    save(
+        module(projectData),
+        moduleData.srcDir.resolve("StudyModule.kt")
+    )
+
 }
 
 fun String.save(srcDir: PsiDirectory, subDirPath: String, fileName: String) {
