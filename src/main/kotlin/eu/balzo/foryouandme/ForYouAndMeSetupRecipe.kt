@@ -41,7 +41,16 @@ fun RecipeExecutor.forYouAndMeSetup(
     save(environment(projectData), moduleData.srcDir.resolve("StudyEnvironment.kt"))
 
     // image configuration
-    save(imageConfiguration(projectData), moduleData.srcDir.resolve("StudyImageConfiguration.kt"))
+    save(
+        imageConfiguration(projectData),
+        moduleData.srcDir.resolve("StudyImageConfiguration.kt")
+    )
+
+    // video configuration
+    save(
+        videoConfiguration(projectData),
+        moduleData.srcDir.resolve("StudyVideoConfiguration.kt")
+    )
 
 }
 
