@@ -26,9 +26,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        maven("https://dl.bintray.com/4youandme/4youandme")
-        maven("https://dl.bintray.com/giacomoparisi/span-droid")
-        maven("https://dl.bintray.com/giacomoparisi/recycler-droid")
         maven("https://jitpack.io")
     }
 }
