@@ -44,7 +44,7 @@ android {
         create("production") {
             matchingFallbacks.add("release")
             isMinifyEnabled = false
-            signingConfig = signingConfigs.maybeCreate("foryouandmedemo")
+            signingConfig = signingConfigs.maybeCreate("signingConfig")
             firebaseCrashlytics { mappingFileUploadEnabled = true }
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -56,7 +56,7 @@ android {
         create("staging") {
             matchingFallbacks.add("release")
             isMinifyEnabled = false
-            signingConfig = signingConfigs.maybeCreate("foryouandmedemo")
+            signingConfig = signingConfigs.maybeCreate("signingConfig")
             applicationIdSuffix = ".staging"
             versionNameSuffix = "-staging"
             firebaseCrashlytics { mappingFileUploadEnabled = true }
@@ -69,7 +69,7 @@ android {
         
         create("staging-dev") {
             matchingFallbacks.add("debug")
-            signingConfig = signingConfigs.maybeCreate("foryouandmedemo")
+            signingConfig = signingConfigs.maybeCreate("signingConfig")
             applicationIdSuffix = ".staging"
             versionNameSuffix = "-staging"
             firebaseCrashlytics { mappingFileUploadEnabled = true }
@@ -92,7 +92,7 @@ android {
 dependencies {
 
     /* --- 4youAndMe --- */
-    implementation("net.4youandme:foryouandme:0.1.44")
+    implementation("net.4youandme:foryouandme:0.1.45")
     
     /* --- firebase --- */
     implementation("com.google.firebase:firebase-analytics-ktx:18.0.2")
@@ -101,7 +101,7 @@ dependencies {
     
     /* --- kotlin --- */
     implementation("org.jetbrains.kotlin:kotlin-stdlib:1.4.30")
-    implementation("androidx.core:core-ktx:1.4.30")
+    implementation("androidx.core:core-ktx:1.3.2")
     
     /* --- android --- */
     implementation("androidx.appcompat:appcompat:1.2.0")
